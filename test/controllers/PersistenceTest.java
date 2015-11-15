@@ -11,6 +11,7 @@ import models.User;
 
 import org.junit.Test;
 
+//import utils.JSONSerializer;
 import utils.Serializer;
 import utils.XMLSerializer;
 import controllers.PacemakerAPI;
@@ -86,4 +87,26 @@ public class PersistenceTest
 		}
 		deleteFile ("testdatastore.xml");
 	}
+
+	/*@Test
+	public void testJSONSerializer() throws Exception 
+	{
+		String datastoreFile = "testdatastore.xml";
+		deleteFile(datastoreFile);
+
+		Serializer serializer = new JSONSerializer(new File(datastoreFile));
+
+		populate(pacemaker);
+		pacemaker.store();
+
+		PacemakerAPI pacemaker2 = new PacemakerAPI(serializer);
+		pacemaker2.load();
+
+		assertEquals(pacemaker.getUsers().size(), pacemaker2.getUsers().size());
+		for (User user : pacemaker.getUsers())
+		{
+			assertTrue(pacemaker2.getUsers().contains(user));
+		}
+		deleteFile("testdatastore.xml");
+	}*/
 }

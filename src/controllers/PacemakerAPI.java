@@ -20,7 +20,9 @@ public class PacemakerAPI
 	private Map<Long, Activity> activitiesIndex = new HashMap<>();
 
 	public PacemakerAPI()
-	{}
+	{
+
+	}
 
 	public PacemakerAPI(Serializer serializer)
 	{
@@ -36,7 +38,7 @@ public class PacemakerAPI
 		userIndex       = (Map<Long, User>)     serializer.pop();
 	}
 
-	void store() throws Exception
+	public void store() throws Exception
 	{
 		serializer.push(userIndex);
 		serializer.push(emailIndex);
@@ -105,4 +107,5 @@ public class PacemakerAPI
 			activity.get().route.add(new Location(latitude, longitude));
 		}
 	}
+
 }

@@ -81,10 +81,10 @@ public class PacemakerAPI
 		emailIndex.remove(user.email);
 	}
 
-	public Activity createActivity(Long id, String type, String location, double distance)
+	public Activity createActivity(Long userId, String type, String location, double distance)
 	{
 		Activity activity = null;
-		Optional<User> user = Optional.fromNullable(userIndex.get(id));
+		Optional<User> user = Optional.fromNullable(userIndex.get(userId));
 		if (user.isPresent())
 		{
 			activity = new Activity (type, location, distance);

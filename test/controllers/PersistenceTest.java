@@ -85,7 +85,7 @@ public class PersistenceTest
 		{
 			assertTrue (pacemaker2.getUsers().contains(user));
 		}
-		deleteFile ("testdatastore.xml");
+		//deleteFile ("testdatastore.xml");
 	}
 
 }

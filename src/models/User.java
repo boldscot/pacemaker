@@ -4,6 +4,8 @@ import static com.google.common.base.MoreObjects.toStringHelper;
 import java.util.HashMap;
 import java.util.Map;
 
+import utils.ToJsonString;
+
 import com.google.common.base.Objects;
 
 public class User 
@@ -34,12 +36,7 @@ public class User
 
 	public String toString()
 	{
-		return toStringHelper(this).addValue(id)
-				.addValue(firstName)
-				.addValue(lastName)
-				.addValue(password)
-				.addValue(email)                               
-				.toString();
+		return new ToJsonString(getClass(), this).toString();
 	}
 
 	@Override  

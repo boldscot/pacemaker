@@ -26,6 +26,7 @@ public class PacemakerAPITest
 		{
 			pacemaker.createUser(user.firstName, user.lastName, user.email, user.password);
 		}
+		System.out.println(pacemaker.getUsers());
 	}
 
 	@After
